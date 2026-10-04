@@ -1,0 +1,2361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rishi Kant Mishra University</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#635bff;
+    --secondary:#06b6d4;
+    --purple:#7c3aed;
+    --dark:#172033;
+    --text:#263248;
+    --muted:#64748b;
+    --light:#f8fafc;
+    --white:#ffffff;
+    --border:#e5e7eb;
+    --shadow:0 15px 45px rgba(31,41,55,.10);
+}
+
+body{
+    font-family:Arial,sans-serif;
+    color:var(--text);
+    background:#f8fafc;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+    height:74px;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e5e7eb;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:800;
+    color:#172033;
+}
+
+.logo-icon{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+
+    display:grid;
+    place-items:center;
+
+    color:white;
+    background:linear-gradient(135deg,#635bff,#06b6d4);
+
+    box-shadow:0 8px 25px rgba(99,91,255,.25);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:#475569;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.nav-actions{
+    display:flex;
+    gap:9px;
+}
+
+.btn{
+    border:1px solid #cbd5e1;
+    background:white;
+    color:#334155;
+
+    padding:10px 17px;
+    border-radius:11px;
+
+    cursor:pointer;
+    font-weight:700;
+
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(99,91,255,.18);
+    border-color:#8b5cf6;
+}
+
+.btn:active{
+    transform:scale(.94);
+}
+
+.btn-primary{
+    color:white;
+    border-color:#635bff;
+    background:linear-gradient(135deg,#635bff,#7c3aed);
+}
+
+.menu{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:120px 7% 70px;
+
+    position:relative;
+
+    background:
+        radial-gradient(circle at 10% 20%,rgba(99,91,255,.09),transparent 30%),
+        radial-gradient(circle at 90% 30%,rgba(6,182,212,.09),transparent 30%),
+        #ffffff;
+}
+
+.hero-content{
+    width:60%;
+    animation:heroIn 1s ease;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 15px;
+    border-radius:30px;
+
+    color:#635bff;
+    background:#eef2ff;
+    border:1px solid #c7d2fe;
+
+    font-size:13px;
+    font-weight:700;
+
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,76px);
+    line-height:1.05;
+    letter-spacing:-3px;
+    color:#172033;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#635bff,#06b6d4,#ec4899);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:650px;
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    margin:25px 0;
+
+    font-size:16px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.hero-visual{
+    position:absolute;
+    right:7%;
+
+    width:330px;
+    height:330px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    background:linear-gradient(135deg,#eef2ff,#ecfeff);
+
+    border:1px solid #dbeafe;
+
+    box-shadow:
+        0 30px 80px rgba(99,91,255,.15),
+        inset 0 0 50px rgba(255,255,255,.8);
+
+    animation:float 5s infinite ease-in-out;
+}
+
+.hero-visual .cap{
+    font-size:100px;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title span{
+    color:#635bff;
+    font-size:13px;
+    letter-spacing:3px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-top:8px;
+    color:#172033;
+}
+
+.section-title p{
+    max-width:650px;
+    margin:12px auto;
+
+    color:#64748b;
+    line-height:1.7;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.stat{
+    padding:28px;
+
+    text-align:center;
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+}
+
+.stat:hover{
+    transform:translateY(-7px);
+}
+
+.stat h3{
+    font-size:34px;
+    color:#635bff;
+}
+
+.stat p{
+    color:#64748b;
+    margin-top:5px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    padding:28px;
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+    border-radius:22px;
+
+    box-shadow:0 10px 35px rgba(15,23,42,.07);
+
+    transition:.35s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    background:#635bff;
+
+    opacity:.06;
+
+    right:-35px;
+    top:-35px;
+}
+
+.card:hover{
+    transform:translateY(-9px);
+
+    border-color:#c4b5fd;
+
+    box-shadow:0 20px 50px rgba(99,91,255,.12);
+}
+
+.card-icon{
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:15px;
+
+    background:#eef2ff;
+    border:1px solid #ddd6fe;
+
+    font-size:25px;
+
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:9px;
+}
+
+.card p{
+    color:#64748b;
+    line-height:1.65;
+    font-size:14px;
+}
+
+.learn{
+    display:inline-block;
+    margin-top:18px;
+
+    color:#635bff;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+/* COLLEGE */
+
+.college-card{
+    cursor:pointer;
+    min-height:240px;
+}
+
+.college-image{
+    height:145px;
+
+    border-radius:15px;
+
+    margin-bottom:18px;
+
+    overflow:hidden;
+
+    background:#eef2ff;
+}
+
+.college-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.college-card:hover .college-image img{
+    transform:scale(1.08);
+}
+
+/* TEACHERS */
+
+.teacher{
+    text-align:center;
+}
+
+.avatar{
+    width:100px;
+    height:100px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    font-size:38px;
+
+    background:linear-gradient(135deg,#eef2ff,#ecfeff);
+
+    border:3px solid #e0e7ff;
+}
+
+.teacher p{
+    color:#64748b;
+    font-size:13px;
+}
+
+/* GRADUATES */
+
+.graduate{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.graduate .avatar{
+    flex-shrink:0;
+
+    width:75px;
+    height:75px;
+
+    margin:0;
+}
+
+.rank{
+    display:inline-block;
+
+    padding:4px 8px;
+
+    border-radius:8px;
+
+    background:#fef3c7;
+    color:#a16207;
+
+    font-size:11px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    max-width:900px;
+
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+
+    gap:25px;
+}
+
+.contact-info,
+.contact-form{
+    padding:30px;
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+}
+
+.contact-info h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.contact-info p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+.info{
+    display:flex;
+    gap:13px;
+    align-items:center;
+
+    margin:17px 0;
+}
+
+.info-icon{
+    width:40px;
+    height:40px;
+
+    border-radius:11px;
+
+    display:grid;
+    place-items:center;
+
+    background:#eef2ff;
+}
+
+.info span{
+    color:#475569;
+    font-size:14px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+
+    padding:14px 15px;
+
+    margin-bottom:14px;
+
+    border-radius:12px;
+
+    border:1px solid #dbe1ea;
+
+    background:#f8fafc;
+
+    color:#172033;
+
+    outline:none;
+
+    font-family:inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#8b5cf6;
+
+    box-shadow:0 0 0 3px rgba(99,91,255,.08);
+}
+
+textarea{
+    height:120px;
+    resize:none;
+}
+
+/* FOOTER */
+
+footer{
+    padding:45px 7%;
+
+    text-align:center;
+
+    color:#64748b;
+
+    background:#ffffff;
+
+    border-top:1px solid #e5e7eb;
+}
+
+/* COLLEGE DETAIL PAGE */
+
+.college-page{
+    display:none;
+
+    min-height:100vh;
+
+    padding:105px 7% 70px;
+
+    background:
+        radial-gradient(circle at 10% 20%,rgba(99,91,255,.08),transparent 30%),
+        radial-gradient(circle at 90% 30%,rgba(6,182,212,.07),transparent 30%),
+        #f8fafc;
+
+    animation:pageIn .45s ease;
+}
+
+.college-page.active{
+    display:block;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.home-page.hidden{
+    display:none;
+}
+
+.back-btn{
+    margin-bottom:25px;
+}
+
+.college-hero{
+    display:grid;
+
+    grid-template-columns:1.1fr 1fr;
+
+    gap:35px;
+
+    align-items:center;
+
+    padding:25px;
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+}
+
+.college-detail-image{
+    height:370px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+}
+
+.college-detail-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.college-detail-content h1{
+    font-size:42px;
+    color:#172033;
+
+    margin-bottom:15px;
+}
+
+.college-detail-content .location{
+    color:#635bff;
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+.college-detail-content p{
+    color:#64748b;
+    line-height:1.8;
+}
+
+.detail-stats{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.detail-stat{
+    padding:15px;
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:15px;
+
+    text-align:center;
+}
+
+.detail-stat strong{
+    display:block;
+
+    font-size:21px;
+
+    color:#635bff;
+}
+
+.detail-stat span{
+    font-size:12px;
+    color:#64748b;
+}
+
+.detail-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-top:30px;
+}
+
+.detail-box{
+    background:white;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+}
+
+.detail-box h2{
+    margin-bottom:20px;
+}
+
+.course-list{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+.course-item{
+    padding:15px;
+
+    border-radius:13px;
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    color:#475569;
+
+    font-weight:600;
+}
+
+.facility-list{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.facility{
+    padding:10px 14px;
+
+    border-radius:30px;
+
+    background:#eef2ff;
+
+    color:#4f46e5;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+.location-box{
+    margin-top:30px;
+
+    padding:25px;
+
+    background:linear-gradient(135deg,#eef2ff,#ecfeff);
+
+    border-radius:22px;
+
+    border:1px solid #dbeafe;
+}
+
+.location-box h2{
+    margin-bottom:8px;
+}
+
+.location-box p{
+    color:#64748b;
+    line-height:1.7;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.55);
+
+    backdrop-filter:blur(8px);
+
+    z-index:3000;
+
+    display:none;
+
+    place-items:center;
+
+    padding:20px;
+}
+
+.modal.active{
+    display:grid;
+}
+
+.modal-box{
+    width:min(430px,100%);
+
+    padding:32px;
+
+    border-radius:25px;
+
+    background:white;
+
+    box-shadow:0 30px 100px rgba(0,0,0,.25);
+
+    position:relative;
+
+    animation:modalIn .3s ease;
+}
+
+@keyframes modalIn{
+    from{
+        transform:scale(.9);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.close{
+    position:absolute;
+
+    right:18px;
+    top:15px;
+
+    border:none;
+    background:none;
+
+    color:#64748b;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+.modal-box h2{
+    margin-bottom:7px;
+}
+
+.modal-box>p{
+    color:#64748b;
+    font-size:13px;
+    margin-bottom:22px;
+}
+
+.switch{
+    text-align:center;
+
+    margin-top:17px;
+
+    color:#64748b;
+
+    font-size:13px;
+}
+
+.switch span{
+    color:#635bff;
+
+    cursor:pointer;
+
+    font-weight:700;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    z-index:5000;
+
+    padding:15px 20px;
+
+    border-radius:14px;
+
+    background:#172033;
+
+    color:white;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+    transform:translateY(100px);
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+
+        top:74px;
+        left:0;
+
+        width:100%;
+
+        display:none;
+
+        flex-direction:column;
+
+        padding:25px 7%;
+
+        background:white;
+
+        border-bottom:1px solid #e5e7eb;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-actions{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-content{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .college-hero{
+        grid-template-columns:1fr;
+    }
+
+    .detail-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:75px 5%;
+    }
+
+    .hero h1{
+        font-size:43px;
+        letter-spacing:-2px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .college-detail-image{
+        height:230px;
+    }
+
+    .college-detail-content h1{
+        font-size:31px;
+    }
+
+    .detail-stats{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .detail-stat{
+        padding:12px 5px;
+    }
+
+    .detail-stat strong{
+        font-size:17px;
+    }
+
+    .course-list{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        <div class="logo-icon">🎓</div>
+        Rishi Kant Mishra University
+    </div>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="#home" onclick="showHome()">Home</a>
+        <a href="#courses" onclick="showHome()">Courses</a>
+        <a href="#colleges" onclick="showHome()">Colleges</a>
+        <a href="#teachers" onclick="showHome()">Teachers</a>
+        <a href="#graduates" onclick="showHome()">Graduates</a>
+        <a href="#contact" onclick="showHome()">Contact</a>
+
+    </div>
+
+    <div class="nav-actions">
+
+        <button class="btn" onclick="openModal('login')">
+            Log In
+        </button>
+
+        <button class="btn btn-primary" onclick="openModal('signup')">
+            Sign Up
+        </button>
+
+    </div>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+</nav>
+
+
+<!-- HOME PAGE -->
+
+<div class="home-page" id="homePage">
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✦ Empowering Future Leaders Since 1985
+        </div>
+
+        <h1>
+            Build Your
+            <span class="gradient">Future</span>
+            With Us.
+        </h1>
+
+        <p>
+            Discover world-class education, innovative courses,
+            inspiring teachers and a global community of ambitious
+            students at Rishi Kant Mishra University.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="btn btn-primary"
+                onclick="scrollToSection('courses')">
+                Explore Courses →
+            </button>
+
+            <button
+                class="btn"
+                onclick="scrollToSection('contact')">
+                Contact University
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-visual">
+        <div class="cap">🎓</div>
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3 class="counter" data-target="25">0</h3>
+            <p>Years of Excellence</p>
+        </div>
+
+        <div class="stat">
+            <h3 class="counter" data-target="18000">0</h3>
+            <p>Students</p>
+        </div>
+
+        <div class="stat">
+            <h3 class="counter" data-target="850">0</h3>
+            <p>Expert Teachers</p>
+        </div>
+
+        <div class="stat">
+            <h3 class="counter" data-target="42">0</h3>
+            <p>Global Programs</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<section id="courses">
+
+    <div class="section-title">
+
+        <span>Academic Programs</span>
+
+        <h2>Explore Our Courses</h2>
+
+        <p>
+            Choose from industry-focused programs designed
+            to prepare you for the future.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>Computer Science</h3>
+            <p>
+                AI, software engineering, cybersecurity,
+                cloud computing and modern technologies.
+            </p>
+            <span class="learn">Learn More →</span>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Engineering</h3>
+            <p>
+                Build the future with innovative engineering
+                programs and practical learning.
+            </p>
+            <span class="learn">Learn More →</span>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Business & Management</h3>
+            <p>
+                Develop leadership, entrepreneurship and
+                business strategy skills.
+            </p>
+            <span class="learn">Learn More →</span>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🧬</div>
+            <h3>Life Sciences</h3>
+            <p>
+                Explore biology, biotechnology and
+                modern scientific research.
+            </p>
+            <span class="learn">Learn More →</span>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⚖️</div>
+            <h3>Law & Governance</h3>
+            <p>
+                Understand law, public policy and governance
+                with experienced faculty.
+            </p>
+            <span class="learn">Learn More →</span>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3>Design & Media</h3>
+            <p>
+                Creative programs covering UI/UX, animation,
+                media and digital design.
+            </p>
+            <span class="learn">Learn More →</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COLLEGES -->
+
+<section id="colleges">
+
+    <div class="section-title">
+
+        <span>Our Network</span>
+
+        <h2>Affiliated Colleges</h2>
+
+        <p>
+            Click on any college to explore its complete profile.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div
+            class="card college-card"
+            onclick="openCollege('technology')">
+
+            <div class="college-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80"
+                    alt="Rishi Kant Mishra Institute">
+
+            </div>
+
+            <h3>
+                Rishi Kant Mishra Institute of Technology
+            </h3>
+
+            <p>
+                Engineering & Technology • 4,500+ Students
+            </p>
+
+            <span class="learn">
+                View College →
+            </span>
+
+        </div>
+
+
+        <div
+            class="card college-card"
+            onclick="openCollege('science')">
+
+            <div class="college-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80"
+                    alt="Central Science College">
+
+            </div>
+
+            <h3>
+                Central Science College
+            </h3>
+
+            <p>
+                Science & Research • 3,200+ Students
+            </p>
+
+            <span class="learn">
+                View College →
+            </span>
+
+        </div>
+
+
+        <div
+            class="card college-card"
+            onclick="openCollege('business')">
+
+            <div class="college-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+                    alt="School of Business Studies">
+
+            </div>
+
+            <h3>
+                School of Business Studies
+            </h3>
+
+            <p>
+                Business & Management • 2,800+ Students
+            </p>
+
+            <span class="learn">
+                View College →
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TEACHERS -->
+
+<section id="teachers">
+
+    <div class="section-title">
+
+        <span>Faculty</span>
+
+        <h2>Meet Our Teachers</h2>
+
+        <p>
+            Learn from experienced educators and industry experts.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card teacher">
+
+            <div class="avatar">👨‍🏫</div>
+
+            <h3>Dr. Arjun Sharma</h3>
+
+            <p>Professor of Computer Science</p>
+
+        </div>
+
+        <div class="card teacher">
+
+            <div class="avatar">👩‍🏫</div>
+
+            <h3>Dr. Emily Carter</h3>
+
+            <p>Professor of Biotechnology</p>
+
+        </div>
+
+        <div class="card teacher">
+
+            <div class="avatar">👨‍💼</div>
+
+            <h3>Prof. Daniel Wilson</h3>
+
+            <p>Business & Management</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GRADUATES -->
+
+<section id="graduates">
+
+    <div class="section-title">
+
+        <span>Our Alumni</span>
+
+        <h2>Top Graduates</h2>
+
+        <p>
+            Our graduates are creating impact across the world.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card graduate">
+
+            <div class="avatar">👨🏻‍💻</div>
+
+            <div>
+
+                <span class="rank">
+                    #01 TOP GRADUATE
+                </span>
+
+                <h3>Rahul Mehta</h3>
+
+                <p>Software Engineer • Silicon Valley</p>
+
+            </div>
+
+        </div>
+
+        <div class="card graduate">
+
+            <div class="avatar">👩🏻‍🔬</div>
+
+            <div>
+
+                <span class="rank">
+                    #02 TOP GRADUATE
+                </span>
+
+                <h3>Sophia Williams</h3>
+
+                <p>Research Scientist • MIT</p>
+
+            </div>
+
+        </div>
+
+        <div class="card graduate">
+
+            <div class="avatar">👨🏻‍💼</div>
+
+            <div>
+
+                <span class="rank">
+                    #03 TOP GRADUATE
+                </span>
+
+                <h3>Aditya Verma</h3>
+
+                <p>Founder & Entrepreneur</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <span>Get In Touch</span>
+
+        <h2>Contact University</h2>
+
+        <p>
+            Have questions? Our admission team is ready to help.
+        </p>
+
+    </div>
+
+    <div class="contact-box">
+
+        <div class="contact-info">
+
+            <h3>Let's Talk</h3>
+
+            <p>
+                Reach out to Rishi Kant Mishra University
+                for admissions, courses, campus visits
+                and general information.
+            </p>
+
+            <div class="info">
+
+                <div class="info-icon">📍</div>
+
+                <span>
+                    Rishi Kant Mishra University Campus, India
+                </span>
+
+            </div>
+
+            <div class="info">
+
+                <div class="info-icon">📧</div>
+
+                <span>
+                    admissions@rishikantmishra.edu
+                </span>
+
+            </div>
+
+            <div class="info">
+
+                <div class="info-icon">📞</div>
+
+                <span>
+                    +91 98765 43210
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <form
+            class="contact-form"
+            onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Email Address"
+                required>
+
+            <select required>
+
+                <option value="">
+                    Select Department
+                </option>
+
+                <option>Admissions</option>
+                <option>Courses</option>
+                <option>Scholarship</option>
+                <option>General Enquiry</option>
+
+            </select>
+
+            <textarea
+                placeholder="Write your message..."
+                required></textarea>
+
+            <button
+                class="btn btn-primary"
+                style="width:100%">
+
+                Send Message →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026
+    <strong>Rishi Kant Mishra University</strong>.
+    All Rights Reserved.
+
+</footer>
+
+</div>
+
+
+<!-- COLLEGE DETAIL PAGE -->
+
+<div
+    class="college-page"
+    id="collegePage">
+
+    <button
+        class="btn back-btn"
+        onclick="showHome()">
+
+        ← Back to Colleges
+
+    </button>
+
+
+    <div class="college-hero">
+
+        <div class="college-detail-image">
+
+            <img
+                id="detailImage"
+                src=""
+                alt="College">
+
+        </div>
+
+
+        <div class="college-detail-content">
+
+            <div
+                class="location"
+                id="detailLocation">
+            </div>
+
+            <h1 id="detailTitle">
+                College Name
+            </h1>
+
+            <p id="detailDescription"></p>
+
+
+            <div class="detail-stats">
+
+                <div class="detail-stat">
+
+                    <strong id="detailStudents">
+                        0
+                    </strong>
+
+                    <span>Students</span>
+
+                </div>
+
+                <div class="detail-stat">
+
+                    <strong id="detailCourses">
+                        0
+                    </strong>
+
+                    <span>Courses</span>
+
+                </div>
+
+                <div class="detail-stat">
+
+                    <strong id="detailYear">
+                        0
+                    </strong>
+
+                    <span>Established</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="detail-grid">
+
+        <div class="detail-box">
+
+            <h2>
+                🎓 Popular Courses
+            </h2>
+
+            <div
+                class="course-list"
+                id="courseList">
+            </div>
+
+        </div>
+
+
+        <div class="detail-box">
+
+            <h2>
+                ✨ Campus Facilities
+            </h2>
+
+            <div
+                class="facility-list"
+                id="facilityList">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="location-box">
+
+        <h2>
+            📍 Campus Location
+        </h2>
+
+        <p id="locationText"></p>
+
+    </div>
+
+</div>
+
+
+<!-- LOGIN / SIGNUP -->
+
+<div
+    class="modal"
+    id="modal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModal()">
+            ×
+        </button>
+
+
+        <div id="loginForm">
+
+            <h2>
+                Welcome Back 👋
+            </h2>
+
+            <p>
+                Login to continue to your student portal.
+            </p>
+
+            <form onsubmit="login(event)">
+
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                    required>
+
+                <input
+                    type="password"
+                    placeholder="Password"
+                    required>
+
+                <button
+                    class="btn btn-primary"
+                    style="width:100%">
+
+                    Log In
+
+                </button>
+
+            </form>
+
+
+            <div class="switch">
+
+                Don't have an account?
+
+                <span onclick="switchForm('signup')">
+                    Create Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="signupForm"
+            style="display:none">
+
+            <h2>
+                Create Account 🚀
+            </h2>
+
+            <p>
+                Join the Rishi Kant Mishra University community.
+            </p>
+
+            <form onsubmit="signup(event)">
+
+                <input
+                    type="text"
+                    placeholder="Full Name"
+                    required>
+
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                    required>
+
+                <input
+                    type="password"
+                    placeholder="Create Password"
+                    required>
+
+                <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    required>
+
+                <button
+                    class="btn btn-primary"
+                    style="width:100%">
+
+                    Sign Up
+
+                </button>
+
+            </form>
+
+
+            <div class="switch">
+
+                Already have an account?
+
+                <span onclick="switchForm('login')">
+                    Login
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script>
+
+/* COLLEGE DATA */
+
+const colleges = {
+
+    technology:{
+
+        title:"Rishi Kant Mishra Institute of Technology",
+
+        location:"New Delhi, India",
+
+        image:
+        "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=85",
+
+        description:
+        "Rishi Kant Mishra Institute of Technology is a leading engineering and technology institution focused on innovation, practical education, research and industry-ready skills. Students get access to modern laboratories, experienced faculty and technology-driven learning.",
+
+        students:"4,500+",
+
+        courses:"18+",
+
+        year:"1998",
+
+        coursesList:[
+            "Computer Science",
+            "Information Technology",
+            "Mechanical Engineering",
+            "Civil Engineering",
+            "Electronics Engineering",
+            "Artificial Intelligence"
+        ],
+
+        facilities:[
+            "Modern Labs",
+            "Digital Library",
+            "Hostel",
+            "Sports Complex",
+            "Innovation Center",
+            "Cafeteria",
+            "Wi-Fi Campus",
+            "Placement Cell"
+        ],
+
+        locationText:
+        "Rishi Kant Mishra Institute of Technology, Knowledge Park, New Delhi, India. The campus is connected with major transportation routes and surrounded by a modern academic environment."
+    },
+
+
+    science:{
+
+        title:"Central Science College",
+
+        location:"Bengaluru, India",
+
+        image:
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85",
+
+        description:
+        "Central Science College provides advanced education in pure sciences, biotechnology and research. The institution encourages students to participate in scientific projects, laboratory research and national competitions.",
+
+        students:"3,200+",
+
+        courses:"15+",
+
+        year:"1989",
+
+        coursesList:[
+            "Biotechnology",
+            "Physics",
+            "Chemistry",
+            "Mathematics",
+            "Microbiology",
+            "Environmental Science"
+        ],
+
+        facilities:[
+            "Research Labs",
+            "Science Library",
+            "Research Center",
+            "Hostel",
+            "Smart Classrooms",
+            "Sports Ground",
+            "Cafeteria",
+            "Medical Center"
+        ],
+
+        locationText:
+        "Central Science College, Science Avenue, Bengaluru, India. The college campus provides a peaceful environment for research, academic learning and scientific exploration."
+    },
+
+
+    business:{
+
+        title:"School of Business Studies",
+
+        location:"Mumbai, India",
+
+        image:
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85",
+
+        description:
+        "School of Business Studies is designed for future entrepreneurs, managers and business leaders. Students learn through case studies, real-world projects, industry interaction and entrepreneurship programs.",
+
+        students:"2,800+",
+
+        courses:"12+",
+
+        year:"2004",
+
+        coursesList:[
+            "BBA",
+            "MBA",
+            "Finance",
+            "Marketing",
+            "Human Resources",
+            "Entrepreneurship"
+        ],
+
+        facilities:[
+            "Business Labs",
+            "Conference Rooms",
+            "Digital Library",
+            "Startup Center",
+            "Hostel",
+            "Cafeteria",
+            "Wi-Fi Campus",
+            "Placement Cell"
+        ],
+
+        locationText:
+        "School of Business Studies, Business District, Mumbai, India. The campus is located in a major business environment and provides strong exposure to industry."
+    }
+
+};
+
+
+/* OPEN COLLEGE */
+
+function openCollege(id){
+
+    const college=colleges[id];
+
+    if(!college)return;
+
+    document
+    .getElementById("homePage")
+    .classList
+    .add("hidden");
+
+    document
+    .getElementById("collegePage")
+    .classList
+    .add("active");
+
+    document.getElementById("detailImage").src=
+        college.image;
+
+    document.getElementById("detailTitle").textContent=
+        college.title;
+
+    document.getElementById("detailLocation").textContent=
+        "📍 "+college.location;
+
+    document.getElementById("detailDescription").textContent=
+        college.description;
+
+    document.getElementById("detailStudents").textContent=
+        college.students;
+
+    document.getElementById("detailCourses").textContent=
+        college.courses;
+
+    document.getElementById("detailYear").textContent=
+        college.year;
+
+    document.getElementById("locationText").textContent=
+        college.locationText;
+
+
+    const courseList=
+        document.getElementById("courseList");
+
+    courseList.innerHTML="";
+
+    college.coursesList.forEach(course=>{
+
+        const div=document.createElement("div");
+
+        div.className="course-item";
+
+        div.innerHTML="🎓 "+course;
+
+        courseList.appendChild(div);
+
+    });
+
+
+    const facilityList=
+        document.getElementById("facilityList");
+
+    facilityList.innerHTML="";
+
+    college.facilities.forEach(facility=>{
+
+        const div=document.createElement("div");
+
+        div.className="facility";
+
+        div.textContent="✓ "+facility;
+
+        facilityList.appendChild(div);
+
+    });
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* HOME */
+
+function showHome(){
+
+    document
+    .getElementById("collegePage")
+    .classList
+    .remove("active");
+
+    document
+    .getElementById("homePage")
+    .classList
+    .remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .remove("open");
+}
+
+
+/* MENU */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("open");
+
+}
+
+
+/* SCROLL */
+
+function scrollToSection(id){
+
+    document
+    .getElementById(id)
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* COUNTERS */
+
+const counters=
+    document.querySelectorAll(".counter");
+
+const observer=
+    new IntersectionObserver((entries)=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                const counter=entry.target;
+
+                const target=
+                    Number(counter.dataset.target);
+
+                let current=0;
+
+                const increment=
+                    Math.max(
+                        1,
+                        Math.ceil(target/80)
+                    );
+
+                const update=()=>{
+
+                    current+=increment;
+
+                    if(current>=target){
+
+                        current=target;
+
+                        counter.textContent=
+                            target>=1000
+                            ?(target/1000)+"K+"
+                            :target+"+";
+
+                        return;
+                    }
+
+                    counter.textContent=current;
+
+                    requestAnimationFrame(update);
+
+                };
+
+                update();
+
+                observer.unobserve(counter);
+            }
+
+        });
+
+    },{
+        threshold:.6
+    });
+
+
+counters.forEach(counter=>{
+    observer.observe(counter);
+});
+
+
+/* MODAL */
+
+function openModal(type){
+
+    document
+    .getElementById("modal")
+    .classList
+    .add("active");
+
+    switchForm(type);
+}
+
+function closeModal(){
+
+    document
+    .getElementById("modal")
+    .classList
+    .remove("active");
+}
+
+function switchForm(type){
+
+    if(type==="signup"){
+
+        document.getElementById("loginForm")
+        .style.display="none";
+
+        document.getElementById("signupForm")
+        .style.display="block";
+
+    }else{
+
+        document.getElementById("loginForm")
+        .style.display="block";
+
+        document.getElementById("signupForm")
+        .style.display="none";
+    }
+}
+
+
+/* LOGIN */
+
+function login(event){
+
+    event.preventDefault();
+
+    closeModal();
+
+    showToast(
+        "Login successful! Welcome back 🎓"
+    );
+}
+
+
+/* SIGNUP */
+
+function signup(event){
+
+    event.preventDefault();
+
+    closeModal();
+
+    showToast(
+        "Account created successfully 🚀"
+    );
+}
+
+
+/* CONTACT */
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    event.target.reset();
+
+    showToast(
+        "Your message has been sent successfully ✨"
+    );
+}
+
+
+/* TOAST */
+
+function showToast(message){
+
+    const toast=
+        document.getElementById("toast");
+
+    toast.textContent=message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
+}
+
+
+/* CLOSE MODAL */
+
+document
+.getElementById("modal")
+.addEventListener("click",function(e){
+
+    if(e.target===this){
+        closeModal();
+    }
+
+});
+
+
+/* MOBILE NAV */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("open");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
